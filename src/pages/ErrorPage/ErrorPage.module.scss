@@ -1,0 +1,43 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .contentError {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .codeError {
+            font-family: Inter;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 40px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: rgba(30, 30, 30, 1);
+        }
+    
+        .titleError {
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: rgba(30, 30, 30, 1);
+            margin-top: 20px;
+        }
+
+        .linkDecoration {
+            margin-top: 69px;
+        }
+    }
+
+}

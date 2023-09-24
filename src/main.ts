@@ -1,24 +1,27 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { AuthPage } from "./pages/AuthPage/AuthPage";
+import { ChangePasswordPage } from "./pages/ChangePasswordPage/ChangePasswordPage";
+import { ChangeProfilePage } from "./pages/ChangeProfilePage/ChangeProfilePage";
+import { ChatsPage } from "./pages/ChatsPage/ChatsPage";
+import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
+import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const ROUTES: Record<string, string> = {
+    '/auth': AuthPage(),
+    '/registration': RegistrationPage(),
+    '/chats': ChatsPage(),
+    '/profile': ProfilePage(),
+    '/changeProfile': ChangeProfilePage(),
+    '/changePassword': ChangePasswordPage(),
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const root = document.getElementById('app');
+
+    if (root) {
+        const component = ROUTES[window.location.pathname] || ErrorPage({codeError: 404, titleError: 'Не туда попали'});
+        root.innerHTML = component;
+    }
+
+})
