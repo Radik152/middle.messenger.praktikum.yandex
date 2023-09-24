@@ -1,9 +1,5 @@
 import Handlebars from "handlebars";
-import { tmpl } from "./Container.tmpl";
-
-interface IProps {
-    children: any;
-}
+import { tmpl } from "./container.tmpl";
 
 export const Container = () => {
     return Handlebars.compile(tmpl)({});
