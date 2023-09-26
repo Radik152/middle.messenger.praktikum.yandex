@@ -14,6 +14,7 @@ const ROUTES: Record<string, string> = {
     '/profile': ProfilePage(),
     '/changeProfile': ChangeProfilePage(),
     '/changePassword': ChangePasswordPage(),
+    '/500': ErrorPage({codeError: 500, titleError: 'Мы уже фиксим'})
 }
 
 window.addEventListener('DOMContentLoaded', () => {
