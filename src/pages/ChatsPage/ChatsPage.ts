@@ -10,4 +10,4 @@ export const ChatsPage = () => {
         LinkProfile: Link({titleLink: 'Профиль >', to: '/profile', className: css.linkProfile}),
         Line: Line({})
     });
-}
+};

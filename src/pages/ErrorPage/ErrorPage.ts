@@ -14,4 +14,4 @@ export const ErrorPage = (props: IProps) => {
         ...props,
         LinkBack: Link({titleLink: 'Назад к чатам', to: '/chats', className: css.linkDecoration})
     })
-}
+};

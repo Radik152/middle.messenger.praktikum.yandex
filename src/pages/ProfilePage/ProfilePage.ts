@@ -23,4 +23,4 @@ export const ProfilePage = () => {
         LinkExit: Link({titleLink: 'Выйти', to: '/auth', className: css.exitLink}),
         Line: Line({className: css.line})
     })
-}
+};

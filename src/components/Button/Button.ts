@@ -8,4 +8,5 @@ interface IProps {
 
 export const Button = (props: IProps) => {
     return Handlebars.compile(tmpl)(props)
-}
+};
+

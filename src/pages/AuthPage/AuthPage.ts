@@ -16,4 +16,4 @@ export const AuthPage = () => {
         ButtonAuth: Button({titleButton: 'Войти', className: css.button}),
         LinkRegistration: Link({titleLink: 'Нет аккаунта?', to: '/registration'})
     });
-}
+};

@@ -5,4 +5,4 @@ export const tmpl = `
         <input class="${css.input}" type="{{typeInput}}" id="{{keyInput}}" name="{{keyInput}}" required />
         <label class="${css.label}" for="{{keyInput}}">{{titleInput}}</label>
     </div>
-`
+`;

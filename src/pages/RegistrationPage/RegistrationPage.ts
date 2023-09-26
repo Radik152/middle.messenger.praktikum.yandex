@@ -20,4 +20,4 @@ export const RegistrationPage = () => {
         ButtonAuth: Button({titleButton: 'Зарегистрироваться', className: css.button}),
         LinkRegistration: Link({titleLink: 'Войти', to: '/auth'})
     })
-}
+};

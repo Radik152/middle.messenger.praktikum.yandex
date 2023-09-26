@@ -24,5 +24,4 @@ window.addEventListener('DOMContentLoaded', () => {
         const component = ROUTES[window.location.pathname] || ErrorPage({codeError: 404, titleError: 'Не туда попали'});
         root.innerHTML = component;
     }
-
 })

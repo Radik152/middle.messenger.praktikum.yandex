@@ -7,4 +7,4 @@ interface IProps {
 
 export const Line = (props: IProps) => {
     return Handlebars.compile(tmpl)(props);
-}
+};

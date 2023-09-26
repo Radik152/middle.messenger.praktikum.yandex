@@ -9,4 +9,4 @@ interface IProps {
 
 export const Link = (props: IProps) => {
     return Handlebars.compile(tmpl)(props);
-}
+};

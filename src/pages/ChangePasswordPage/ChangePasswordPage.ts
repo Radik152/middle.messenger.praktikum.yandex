@@ -16,4 +16,4 @@ export const ChangePasswordPage = () => {
         NewPasswordRepeatValue: ProfileValueInput({ title: "Повторите новый пароль", value: "", typeInput: 'password', keyInput: 'login' }),
         ButtonSave: Button({titleButton: 'Сохранить', className: css.buttonSave})
     })
-}
+};

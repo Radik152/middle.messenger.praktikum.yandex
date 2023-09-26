@@ -8,4 +8,4 @@ interface IProps {
 
 export const Title = (props: IProps ) => {
     return Handlebars.compile(tmpl)(props)
-} 
+};

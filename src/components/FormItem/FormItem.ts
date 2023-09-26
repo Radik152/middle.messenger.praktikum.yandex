@@ -10,4 +10,4 @@ interface IProps {
 
 export const FormItem = (props: IProps) => {
     return Handlebars.compile(tmpl)(props);
-}
+};

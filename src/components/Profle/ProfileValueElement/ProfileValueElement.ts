@@ -17,4 +17,4 @@ export const ProfileValueElement = (props: IProps) => {
         ...props,
         Line: !props.hideLine ? Line({className: css.lineClass}) : null
     })
-}
+};
