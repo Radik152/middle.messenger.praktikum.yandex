@@ -1,3 +1,6 @@
+## Сайт на netlify
+https://musical-gumdrop-b00e84.netlify.app/chats
+
 ## Команды для консоли
 
 1. start - собирает проект и запускает сервер со статикой
