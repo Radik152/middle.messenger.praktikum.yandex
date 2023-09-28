@@ -1,7 +1,7 @@
 import css from './ChangePasswordPage.module.scss';
 
 export const tmpl = `
-    <main class="${css.containerProfile}">
+    <div class="${css.containerProfile}">
         <div class="${css.back}">
             <div class="${css.backIcon}"></div>
         </div>
@@ -17,5 +17,5 @@ export const tmpl = `
                 {{{ButtonSave}}}
             </form>
         </div>
-    </main>  
+    </div>  
 `;

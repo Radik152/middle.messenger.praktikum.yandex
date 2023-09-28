@@ -1,7 +1,7 @@
 import css from './AuthPage.module.scss';
 
 export const tmpl = `
-    <main class="${css.container}">
+    <div class="${css.container}">
         <div class="${css.containerAuthPage}">
             {{{TitleAuth}}}
             <form class="${css.form}">
@@ -15,5 +15,5 @@ export const tmpl = `
                 </div>
             </form>
         </div>
-    </main>
+    </div>
 `;
