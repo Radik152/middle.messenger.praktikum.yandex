@@ -4,7 +4,7 @@
     height: 100vh;
 
     .back {
-        border-right: 1px solid rgba(234, 234, 234, 1);
+        border-right: 1px solid var(--border-white-color);
         width: 64px;
         position: relative;
 
@@ -50,8 +50,8 @@
             .buttonSave {
                 width: 280px;
                 padding: 12px 70px;
-                color: rgba(255, 255, 255, 1);
-                background-color: rgba(51, 105, 243, 1);
+                color: var(--white-main-color);
+                background-color: var(--blue-main-color);
                 border: none;
                 border-radius: 8px;
                 margin-top: 60px;

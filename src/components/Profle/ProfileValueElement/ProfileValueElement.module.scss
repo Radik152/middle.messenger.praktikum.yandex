@@ -13,11 +13,11 @@
     }
 
     .titleProfile {
-        color: rgba(30, 30, 30, 1);      
+        color: var(--black-color);      
     }
 
     .valueProfile {
-        color: rgba(153, 153, 153, 1);
+        color: var(--main-grey-color);
     }
 }
 

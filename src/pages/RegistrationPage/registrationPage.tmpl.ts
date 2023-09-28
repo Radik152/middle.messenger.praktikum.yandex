@@ -1,7 +1,7 @@
 import css from './RegistrationPage.module.scss';
 
 export const tmpl = `
-    <div class="${css.container}">
+    <main class="${css.container}">
         <div class="${css.containerRegPage}">
             {{{TitleAuth}}}
             <form class="${css.form}">
@@ -20,5 +20,5 @@ export const tmpl = `
                 </div>
             </form>
         </div>
-    </div>
+    </main>
 `;

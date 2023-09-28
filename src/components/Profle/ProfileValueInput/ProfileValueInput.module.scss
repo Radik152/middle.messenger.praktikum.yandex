@@ -13,13 +13,13 @@
     }
 
     .titleProfile {
-        color: rgba(30, 30, 30, 1);      
+        color: var(--black-color);      
     }
 
     .inputChangeProfile {
         border: none;
         text-align: right;
-        color: rgba(153, 153, 153, 1);
+        color: var(--main-grey-color);
     }
 
     .inputChangeProfile:focus {
@@ -29,7 +29,7 @@
 
     input::-webkit-input-placeholder {
         text-align: right;
-        color: rgba(153, 153, 153, 1);
+        color: var(--main-grey-color);
     }
 }
 

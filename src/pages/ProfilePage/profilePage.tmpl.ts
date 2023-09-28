@@ -1,7 +1,7 @@
 import css from './ProfilePage.module.scss';
 
 export const tmpl = `
-    <div class="${css.containerProfile}">
+    <main class="${css.containerProfile}">
         <div class="${css.back}">
             <div class="${css.backIcon}"></div>
         </div>
@@ -26,5 +26,5 @@ export const tmpl = `
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 `;

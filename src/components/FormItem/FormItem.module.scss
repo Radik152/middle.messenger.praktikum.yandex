@@ -8,7 +8,7 @@
     .input {
         width: 100%;
         border: none;
-        border-bottom: 1px solid rgba(51, 105, 243, 1)
+        border-bottom: 1px solid var(--blue-main-color);
     }
 
     .label {
@@ -26,7 +26,7 @@
         line-height: 13px;
         letter-spacing: 0em;
         text-align: left;
-        color: rgba(153, 153, 153, 1);
+        color: var(--main-grey-color);
     }
 
     .input:focus {

@@ -21,7 +21,7 @@
             line-height: 40px;
             letter-spacing: 0em;
             text-align: center;
-            color: rgba(30, 30, 30, 1);
+            color: var(--black-color);
         }
     
         .titleError {
@@ -31,7 +31,7 @@
             line-height: 20px;
             letter-spacing: 0em;
             text-align: center;
-            color: rgba(30, 30, 30, 1);
+            color: var(--black-color);
             margin-top: 20px;
         }
 

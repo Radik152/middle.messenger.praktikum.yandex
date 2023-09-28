@@ -1,7 +1,7 @@
 import css from './ChatsPage.module.scss';
 
 export const tmpl = `
-    <div class="${css.containerChats}">
+    <main class="${css.containerChats}">
         <div class="${css.chatsList}">
             <div class="${css.chatsListHeader}">
                 {{{LinkProfile}}}
@@ -14,5 +14,5 @@ export const tmpl = `
                 <span>Выберите чат чтобы отправить сообщение</span>
             </div>
         </div>
-    </div>
+    </main>
 `;

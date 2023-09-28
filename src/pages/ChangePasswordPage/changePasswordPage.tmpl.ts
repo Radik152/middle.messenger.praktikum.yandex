@@ -1,12 +1,12 @@
 import css from './ChangePasswordPage.module.scss';
 
 export const tmpl = `
-<div class="${css.containerProfile}">
+    <main class="${css.containerProfile}">
         <div class="${css.back}">
             <div class="${css.backIcon}"></div>
         </div>
         <div class="${css.profile}">
-            <div class="${css.windowProfile}">
+            <form class="${css.windowProfile}">
                 {{{Avatar}}}
                 {{{TitleName}}}
                 <div class="${css.valueBlock}">
@@ -15,7 +15,7 @@ export const tmpl = `
                     {{{NewPasswordRepeatValue}}}
                 </div>
                 {{{ButtonSave}}}
-            </div>
+            </form>
         </div>
-    </div>  
+    </main>  
 `;
