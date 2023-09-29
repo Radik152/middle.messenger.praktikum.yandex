@@ -1,0 +1,68 @@
+.containerProfile {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .back {
+        border-right: 1px solid var(--border-white-color);
+        width: 64px;
+        position: relative;
+
+        .backIcon {
+            position: absolute;
+            top: 47%;
+            left: 18px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: url("data:image/svg+xml,%0A%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' transform='rotate(-180 14 14)' fill='%233369F3'/%3E%3Crect x='20' y='14.8' width='11' height='1.6' transform='rotate(-180 20 14.8)' fill='white'/%3E%3Cpath d='M13 19L9 14L13 9' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A")
+        }
+    }
+
+    .profile { 
+        position: relative;
+        width: calc(100% - 65px);
+
+        .windowProfile {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;            
+
+            .titleName {
+                font-weight: 600;
+                padding-top: 0;
+            }
+
+            .valueBlock {
+                margin-top: 60px;
+            }
+
+            .buttonsBlock {
+                width: 510px;
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                margin-top: 60px;
+
+                .line {
+                    margin: 0;
+                    margin-top: 10px;
+                }
+
+                .exitLink {
+                    color: var(--red-color);
+                }
+            }
+        }
+    }
+}

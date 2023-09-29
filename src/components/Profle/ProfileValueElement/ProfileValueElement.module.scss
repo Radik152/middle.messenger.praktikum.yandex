@@ -1,0 +1,28 @@
+.containerProfileValue {
+    width: 510px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        font-family: Inter;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 13px;
+        letter-spacing: 0em;
+
+    }
+
+    .titleProfile {
+        color: var(--black-color);      
+    }
+
+    .valueProfile {
+        color: var(--main-grey-color);
+    }
+}
+
+.lineClass {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
