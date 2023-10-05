@@ -1,5 +1,5 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./button.tmpl";
+import Handlebars from 'handlebars';
+import { tmpl } from './button.tmpl';
 
 interface IProps {
     titleButton: string;
@@ -7,6 +7,5 @@ interface IProps {
 }
 
 export const Button = (props: IProps) => {
-    return Handlebars.compile(tmpl)(props)
+    return Handlebars.compile(tmpl)(props);
 };
-

@@ -1,5 +1,5 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./line.tmpl";
+import Handlebars from 'handlebars';
+import { tmpl } from './line.tmpl';
 
 interface IProps {
     className?: string;

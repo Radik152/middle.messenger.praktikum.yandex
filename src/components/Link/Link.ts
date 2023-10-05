@@ -1,5 +1,5 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./link.tmpl";
+import Handlebars from 'handlebars';
+import { tmpl } from './link.tmpl';
 
 interface IProps {
     to: string;

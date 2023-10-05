@@ -1,5 +1,5 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./FormItem.tmpl";
+import Handlebars from 'handlebars';
+import { tmpl } from './FormItem.tmpl';
 
 interface IProps {
     titleInput: string;
