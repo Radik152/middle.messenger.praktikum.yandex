@@ -5,7 +5,7 @@ export const tmpl = `
         <div class="${css.contentError}">
             <span class="${css.codeError}">{{codeError}}</span>
             <span class="${css.titleError}">{{titleError}}</span>
-            {{{LinkBack}}}
+            {{{linkBack}}}
         </div>
     </div>
 `;

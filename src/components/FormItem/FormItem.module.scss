@@ -11,6 +11,14 @@
         border-bottom: 1px solid var(--blue-main-color);
     }
 
+    .input:invalid {
+        border-bottom: 1px solid var(--red-color);
+    }
+    
+    .input:valid {
+        border-bottom: 1px solid var(--blue-main-color);
+    }
+
     .label {
         position: absolute;
         pointer-events: none;
@@ -27,6 +35,18 @@
         letter-spacing: 0em;
         text-align: left;
         color: var(--main-grey-color);
+    }
+
+    .error {
+        position: absolute;
+        bottom: -15px;
+        color: var(--red-color);
+        font-family: Inter;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 8px;
+        letter-spacing: 0em;
+        text-align: left;
     }
 
     .input:focus {

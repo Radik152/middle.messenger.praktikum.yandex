@@ -6,15 +6,15 @@ export const tmpl = `
             <div class="${css.backIcon}"></div>
         </div>
         <div class="${css.profile}">
-            <form class="${css.windowProfile}">
-                {{{Avatar}}}
-                {{{TitleName}}}
+            <form id="changePasswordForm" class="${css.windowProfile}" onsubmit="return false">
+                {{{avatar}}}
+                {{{titleName}}}
                 <div class="${css.valueBlock}">
-                    {{{OldPasswordValue}}}
-                    {{{NewPasswordValue}}}
-                    {{{NewPasswordRepeatValue}}}
+                    {{{oldPasswordValue}}}
+                    {{{newPasswordValue}}}
+                    {{{newPasswordRepeatValue}}}
                 </div>
-                {{{ButtonSave}}}
+                {{{buttonSave}}}
             </form>
         </div>
     </div>  

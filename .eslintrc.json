@@ -13,9 +13,10 @@
         "no-restricted-exports": "off",
         "no-param-reassign": "off",
         "import/no-absolute-path": "off",
-        "arrow-body-style": ["error", "always"],
+        "arrow-body-style": "off",
         "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
         "indent": "off",
-        "@typescript-eslint/indent": "off"
+        "@typescript-eslint/indent": "off",
+        "linebreak-style": "off"
     }
 }

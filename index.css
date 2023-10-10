@@ -2,9 +2,48 @@
     --white-main-color: rgba(255, 255, 255, 1);
     --bc-white-main-color: rgba(239, 239, 239, 1);
     --border-white-color: rgba(234, 234, 234, 1);
+    --chat-bc-color: rgba(248, 248, 248, 1);
+    --chat-you-bc-color: rgba(228, 237, 253, 1);
 
     --main-grey-color: rgba(153, 153, 153, 1);
     --blue-main-color: rgba(51, 105, 243, 1);
     --red-color: rgba(255, 0, 0, 1);
     --black-color: rgba(30, 30, 30, 1);
+}
+
+
+.main__message {
+    /* height: calc(100vh - 110px); */
+    overflow-y: auto;
+}
+
+.main__message {
+    background-color: var(--chat-bc-color);
+    padding: 11px;
+    color: var(--black-color);
+    border-radius: 8px;
+    max-width: 402px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.main__message:last-child {
+    margin-bottom: 30px;
+}
+
+.main__message--you {
+    background-color: var(--chat-you-bc-color);
+    margin-left: auto;
+}
+
+.main__date {
+    text-align: right;
+    font-size: 9px;
+    line-height: 9px;
+    color: var(--main-grey-color)
+}
+
+.main__date--you {
+    color: var(--blue-main-color);
 }
