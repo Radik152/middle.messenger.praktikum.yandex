@@ -18,5 +18,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": [
+    ".eslintrc.cjs",
+    "src", 
+    "index.js",
+    "./vite.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist/assets"
+  ]
 }
