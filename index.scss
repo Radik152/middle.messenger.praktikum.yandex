@@ -42,3 +42,8 @@
 .main__date--you {
     color: var(--blue-main-color);
 }
+
+
+.invalidInput {
+    border-bottom: 1px solid var(--red-color) !important;
+}

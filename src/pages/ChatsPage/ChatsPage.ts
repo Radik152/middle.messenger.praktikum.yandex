@@ -29,7 +29,7 @@ export class ChatsPage extends Block {
       this.children.linkProfile = new Link({ titleLink: 'Профиль >', to: '/profile', className: css.linkProfile });
       this.children.line = new Line({});
       this.children.input = new Input({
-        type: 'text', name: 'message', placeholder: 'Поиск', className: css.searchChat, events: { change: () => console.log(this.validationMessages()) },
+        type: 'text', name: 'chats', placeholder: 'Поиск', className: css.searchChat, events: { change: () => notEmptyValidator('chats') },
       });
       this.children.chats = new ChatsList({ chats });
       this.children.chat = new ChatWindow({ activeChat: this.activeChat() });

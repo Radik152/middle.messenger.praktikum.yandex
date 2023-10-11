@@ -7,8 +7,11 @@ export const validation = (name: string, regExp: RegExp) => {
     const input = document.getElementById(name) as HTMLInputElement;
 
     if (input?.value) {
+      input?.classList.remove('invalidInput');
+
       return input?.value.match(regExp);
     }
+    input?.classList.add('invalidInput');
 
     return null;
 };

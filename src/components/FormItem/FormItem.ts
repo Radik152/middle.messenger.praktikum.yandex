@@ -27,7 +27,6 @@ export class FormItem extends Block {
             name: this.props.keyInput,
             type: this.props.typeInput,
             events: this.props.events,
-            regExp: this.props.regExp,
         });
     }
 

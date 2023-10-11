@@ -11,14 +11,6 @@
         border-bottom: 1px solid var(--blue-main-color);
     }
 
-    .input:invalid {
-        border-bottom: 1px solid var(--red-color);
-    }
-    
-    .input:valid {
-        border-bottom: 1px solid var(--blue-main-color);
-    }
-
     .label {
         position: absolute;
         pointer-events: none;

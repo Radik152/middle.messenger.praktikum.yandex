@@ -7,7 +7,6 @@ interface IProps {
   type: string;
   name: string;
   placeholder?: string;
-  regExp?: RegExp;
   events?: {
     focus?: () => void;
     change?: () => void;
@@ -26,7 +25,6 @@ export class Input extends Block {
     (this.element! as HTMLInputElement).id = this.props.name;
     (this.element! as HTMLInputElement).type = this.props.type;
     (this.element! as HTMLInputElement).placeholder = this.props.placeholder ? this.props.placeholder : '';
-    (this.element! as HTMLInputElement).pattern = this.props.regExp;
   }
 
   render() {
