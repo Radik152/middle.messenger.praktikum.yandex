@@ -1,6 +1,7 @@
-import Handlebars from "handlebars";
-import { Link } from "../../components/Link/Link";
-import { tmpl } from "./errorPage.tmpl";
+import { Link } from '../../components/Link/Link';
+import Block from '../../utils/Block';
+
+import { tmpl } from './errorPage.tmpl';
 
 import css from './ErrorPage.module.scss';
 
@@ -9,9 +10,16 @@ interface IProps {
     titleError: string;
 }
 
-export const ErrorPage = (props: IProps) => {
-    return Handlebars.compile(tmpl)({
-        ...props,
-        LinkBack: Link({titleLink: 'Назад к чатам', to: '/chats', className: css.linkDecoration})
-    })
+export class ErrorPage extends Block {
+    constructor(props: IProps) {
+        super('div', props);
+    }
+
+    init() {
+        this.children.linkBack = new Link({ titleLink: 'Назад к чатам', to: '/chats', className: css.linkDecoration });
+    }
+
+    render() {
+        return this.compile(tmpl, this.props);
+    }
 }

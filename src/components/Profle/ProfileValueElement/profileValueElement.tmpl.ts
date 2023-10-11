@@ -5,5 +5,5 @@ export const tmpl = `
         <span class="${css.titleProfile}">{{title}}</span>
         <span class="${css.valueProfile}">{{value}}</span>
     </div> 
-    {{{Line}}}
+    {{{line}}}
 `;

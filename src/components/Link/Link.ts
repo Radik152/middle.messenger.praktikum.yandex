@@ -1,5 +1,7 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./link.tmpl";
+import { tmpl } from './link.tmpl';
+import Block from '../../utils/Block';
+
+import css from './Link.module.scss';
 
 interface IProps {
     to: string;
@@ -7,6 +9,17 @@ interface IProps {
     className?: string;
 }
 
-export const Link = (props: IProps) => {
-    return Handlebars.compile(tmpl)(props);
+export class Link extends Block {
+    constructor(props: IProps) {
+        super('a', props);
+    }
+
+    init() {
+        (this.element! as HTMLAnchorElement).href = this.props.to;
+        this.element!.className = `${css.link} ${this.props.className}`;
+    }
+
+    render() {
+        return this.compile(tmpl, this.props);
+    }
 }

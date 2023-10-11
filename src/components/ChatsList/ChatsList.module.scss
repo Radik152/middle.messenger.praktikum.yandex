@@ -1,0 +1,68 @@
+.container {
+  padding: 0;
+
+  .containerChat {
+    display: flex;
+    width: calc(100% - 10px);
+    padding-top: 12px;
+    padding-left: 10px;
+
+    .img {
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      background-color: var(--bc-white-main-color);
+    }
+
+    .infoChat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 57px);
+      margin-left: 10px;
+
+      .nameChat {
+        font-family: Inter, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 13px;
+        letter-spacing: 0;
+        text-align: left;
+        color: var(--black-color)
+      }
+
+      .lastMessage {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0;
+        text-align: left;
+        color: var(--main-grey-color);
+        margin-top: 4px;
+        margin-right: 10px;
+      }
+
+      .timeBlock {
+        position: absolute;
+        right: 15px;
+        font-family: Inter, sans-serif;
+        font-size: 9px;
+        font-weight: 500;
+        line-height: 13px;
+        letter-spacing: 0;
+        text-align: right;
+        color: var(--main-grey-color);
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: var(--border-white-color);
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+}

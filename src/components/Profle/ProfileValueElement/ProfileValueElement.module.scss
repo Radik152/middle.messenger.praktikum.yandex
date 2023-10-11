@@ -4,20 +4,20 @@
     justify-content: space-between;
 
     span {
-        font-family: Inter;
+        font-family: Inter, sans-serif;
         font-size: 13px;
         font-weight: 500;
         line-height: 13px;
-        letter-spacing: 0em;
+        letter-spacing: 0;
 
     }
 
     .titleProfile {
-        color: rgba(30, 30, 30, 1);      
+        color: var(--black-color);      
     }
 
     .valueProfile {
-        color: rgba(153, 153, 153, 1);
+        color: var(--main-grey-color);
     }
 }
 
