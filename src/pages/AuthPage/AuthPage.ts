@@ -11,7 +11,6 @@ import { tmpl } from './authPage.tmpl';
 
 import css from './AuthPage.module.scss';
 import { validateLogin, validatePassword } from '../../utils/validations/validation';
-import { loginRegExp } from '../../utils/validations/RegExp';
 
 interface AuthFormType {
     login: string;
@@ -34,10 +33,10 @@ export class AuthPage extends Block {
             typeInput: 'text',
             classNameContainer: css.formItemMargin_0,
             events: { focus: () => validateLogin() },
-            regExp: loginRegExp,
+            errorMessage: 'Неправильный логин',
         });
         this.children.formItemPassword = new FormItem({
-            titleInput: 'Пароль', keyInput: 'password', typeInput: 'password', events: { focus: () => validatePassword('password') },
+            titleInput: 'Пароль', keyInput: 'password', typeInput: 'password', events: { focus: () => validatePassword('password') }, errorMessage: 'Неправильный пароль',
         });
         this.children.buttonAuth = new Button({ titleButton: 'Войти', className: css.button, events: { click: () => this.submitForm() } });
         this.children.linkRegistration = new Link({ titleLink: 'Нет аккаунта?', to: '/registration' });

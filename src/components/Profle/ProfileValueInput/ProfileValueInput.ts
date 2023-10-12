@@ -12,6 +12,7 @@ interface IProps {
   typeInput: string;
   keyInput: string;
   hideLine?: boolean;
+  errorMessage?: string;
   events?: {
     focus?: () => void;
   };

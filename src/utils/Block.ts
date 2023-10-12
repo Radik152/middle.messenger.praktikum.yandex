@@ -82,6 +82,16 @@ class Block<P extends Record<string, any> = any> {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
+  private _removeEvents() {
+    const { events } = this.props;
+
+    if (events != null) {
+        Object.keys(events).forEach((eventName) => {
+            this._element?.removeEventListener(eventName, events[eventName]);
+        });
+    }
+  }
+
   _createResources() {
     const { tagName } = this._meta;
     this._element = this._createDocumentElement(tagName);
@@ -187,6 +197,17 @@ class Block<P extends Record<string, any> = any> {
     });
 
     return temp.content;
+  }
+
+  protected removeEvents() {
+    this._removeEvents();
+    Object.keys(this.children).forEach((child) => {
+        if (Array.isArray(this.children[child])) {
+            (this.children[child] as Block<P>[]).forEach((ch) => ch.removeEvents());
+        } else {
+            (this.children[child] as Block<P>).removeEvents();
+        }
+    });
   }
 
   protected render(): DocumentFragment {

@@ -7,7 +7,7 @@ import { Avatar } from '../../components/Profle/Avatar/Avatar';
 import Block from '../../utils/Block';
 
 import css from './ChangePasswordPage.module.scss';
-import { validatePassword } from '../../utils/validations/validation';
+import { validatePassword, validateRepeatPassword } from '../../utils/validations/validation';
 
 interface ChangePasswordFormType {
     oldPassword: string;
@@ -24,17 +24,27 @@ export class ChangePasswordPage extends Block {
         this.children.avatar = new Avatar();
         this.children.titleName = new Title({ title: 'Иван', className: css.titleName });
         this.children.oldPasswordValue = new ProfileValueInput({
-            title: 'Старый пароль', value: '', typeInput: 'password', keyInput: 'oldPassword', events: { focus: () => validatePassword('oldPassword') },
+            title: 'Старый пароль',
+            value: '',
+            typeInput: 'password',
+            keyInput: 'oldPassword',
+            events: { focus: () => validatePassword('oldPassword') },
+            errorMessage: 'Неправильный пароль',
         });
         this.children.newPasswordValue = new ProfileValueInput({
-            title: 'Новый пароль', value: '', typeInput: 'password', keyInput: 'newPassword', events: { focus: () => validatePassword('oldPassword') },
+            title: 'Новый пароль',
+            value: '',
+            typeInput: 'password',
+            keyInput: 'newPassword',
+            events: { focus: () => validatePassword('oldPassword') },
+            errorMessage: 'Неправильный пароль',
         });
         this.children.newPasswordRepeatValue = new ProfileValueInput({
             title: 'Повторите новый пароль',
             value: '',
             typeInput: 'password',
             keyInput: 'repeatNewPassword',
-            events: { focus: () => console.log(validatePassword('repeatNewPassword')) },
+            events: { focus: () => validateRepeatPassword('repeatNewPassword', 'newPassword') },
         });
         this.children.buttonSave = new Button({ titleButton: 'Сохранить', className: css.buttonSave, events: { click: () => this.submitForm() } });
     }

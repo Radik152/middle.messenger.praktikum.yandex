@@ -9,7 +9,7 @@ interface IProps {
     keyInput: string;
     typeInput: string;
     classNameContainer?: string;
-    regExp?: RegExp;
+    errorMessage?: string
     events?: {
         focus?: () => void;
     }

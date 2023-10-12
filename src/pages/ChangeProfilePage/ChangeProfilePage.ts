@@ -35,18 +35,29 @@ export class ChangeProfilePage extends Block {
           typeInput: 'text',
           keyInput: 'email',
           events: { focus: () => console.log(validateEmail()) },
+          errorMessage: 'Неправильный email',
         });
         this.children.loginValue = new ProfileValueInput({
-          title: 'Логин', value: 'ivan', typeInput: 'text', keyInput: 'login', events: { focus: () => validateLogin() },
+          title: 'Логин', value: 'ivan', typeInput: 'text', keyInput: 'login', events: { focus: () => validateLogin() }, errorMessage: 'Неправильный логин',
         });
         this.children.nameValue = new ProfileValueInput({
-          title: 'Имя', value: 'Иван', typeInput: 'text', keyInput: 'first_name', events: { focus: () => validateName('first_name') },
+          title: 'Имя', value: 'Иван', typeInput: 'text', keyInput: 'first_name', events: { focus: () => validateName('first_name') }, errorMessage: 'Может содержать только буквы',
         });
         this.children.familyValue = new ProfileValueInput({
-          title: 'Фамилия', value: 'Иванов', typeInput: 'text', keyInput: 'second_name', events: { focus: () => validateName('second_name') },
+          title: 'Фамилия',
+          value: 'Иванов',
+          typeInput: 'text',
+          keyInput: 'second_name',
+          events: { focus: () => validateName('second_name') },
+          errorMessage: 'Может содержать только буквы',
         });
         this.children.nameChatValue = new ProfileValueInput({
-          title: 'Имя в чате', value: 'Иван', typeInput: 'text', keyInput: 'display_name', events: { focus: () => validateName('display_name') },
+          title: 'Имя в чате',
+          value: 'Иван',
+          typeInput: 'text',
+          keyInput: 'display_name',
+          events: { focus: () => validateName('display_name') },
+          errorMessage: 'Может содержать только буквы',
         });
         this.children.phoneValue = new ProfileValueInput({
           title: 'Телефон',
@@ -55,6 +66,7 @@ export class ChangeProfilePage extends Block {
           typeInput: 'text',
           keyInput: 'phone',
           events: { focus: () => console.log(validatePhone()) },
+          errorMessage: 'Состоит и цифр от 10 до 15',
         });
         this.children.buttonSave = new Button({ titleButton: 'Сохранить', className: css.buttonSave, events: { click: () => this.submitForm() } });
     }
