@@ -12,6 +12,8 @@ export type HttpRequestOptions = {
   timeout?: number;
 };
 
+type HTTPMethod = (url: string, options?: HttpRequestOptions) => Promise<XMLHttpRequest>;
+
 function queryStringify(data: Record<string, any>) {
   const queryKeys = Object.keys(data);
 
@@ -19,21 +21,21 @@ function queryStringify(data: Record<string, any>) {
 }
 
 export default class ApiService {
-  public get(url: string, options: HttpRequestOptions = {}): Promise<XMLHttpRequest> {
+  public get: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: HttpMethodsEnum.GET }, options.timeout);
-  }
+  };
 
-  public post(url: string, options: HttpRequestOptions = {}): Promise<XMLHttpRequest> {
+  public post: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: HttpMethodsEnum.POST }, options.timeout);
-  }
+  };
 
-  public put(url: string, options: HttpRequestOptions = {}): Promise<XMLHttpRequest> {
+  public put: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: HttpMethodsEnum.PUT }, options.timeout);
-  }
+  };
 
-  public delete(url: string, options: HttpRequestOptions = {}): Promise<XMLHttpRequest> {
+  public delete: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: HttpMethodsEnum.DELETE }, options.timeout);
-  }
+  };
 
   request = (
     url: string,
