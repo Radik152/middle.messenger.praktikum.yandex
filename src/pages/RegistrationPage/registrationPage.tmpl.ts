@@ -3,20 +3,20 @@ import css from './RegistrationPage.module.scss';
 export const tmpl = `
     <div class="${css.container}">
         <div class="${css.containerRegPage}">
-            {{{TitleAuth}}}
-            <form class="${css.form}">
+            {{{titleAuth}}}
+            <form id="registrationForm" class="${css.form}" onsubmit="return false">
                 <div>
-                    {{{FormItemEmail}}}
-                    {{{FormItemLogin}}}
-                    {{{FormItemFirstName}}}
-                    {{{FormItemSecondName}}}
-                    {{{FormItemPhone}}}
-                    {{{FormItemPassword}}}
-                    {{{FormItemRepeatPassword}}}
+                    {{{formItemEmail}}}
+                    {{{formItemLogin}}}
+                    {{{formItemFirstName}}}
+                    {{{formItemSecondName}}}
+                    {{{formItemPhone}}}
+                    {{{formItemPassword}}}
+                    {{{formItemRepeatPassword}}}
                 </div>
                 <div class="${css.buttonBlock}">
-                    {{{ButtonAuth}}}
-                    {{{LinkRegistration}}}
+                    {{{buttonAuth}}}
+                    {{{linkRegistration}}}
                 </div>
             </form>
         </div>

@@ -7,22 +7,22 @@ export const tmpl = `
         </div>
         <div class="${css.profile}">
             <div class="${css.windowProfile}">
-                {{{Avatar}}}
-                {{{TitleName}}}
+                {{{avatar}}}
+                {{{titleName}}}
                 <div class="${css.valueBlock}">
-                    {{{EmailValue}}}
-                    {{{LoginValue}}}
-                    {{{NameValue}}}
-                    {{{FamilyValue}}}
-                    {{{NameChatValue}}}
-                    {{{PhoneValue}}}
+                    {{{emailValue}}}
+                    {{{loginValue}}}
+                    {{{nameValue}}}
+                    {{{familyValue}}}
+                    {{{nameChatValue}}}
+                    {{{phoneValue}}}
                 </div>
                 <div class="${css.buttonsBlock}">
-                    {{{LinkChangeProfile}}}
-                    {{{Line}}}
-                    {{{LinkChangePassword}}}
-                    {{{Line}}}    
-                    {{{LinkExit}}}
+                    {{{linkChangeProfile}}}
+                    {{{line}}}
+                    {{{linkChangePassword}}}
+                    {{{line_2}}}    
+                    {{{linkExit}}}
                 </div>
             </div>
         </div>

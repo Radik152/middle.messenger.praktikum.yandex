@@ -1,0 +1,57 @@
+:root {
+    --white-main-color: rgba(255, 255, 255, 100%);
+    --bc-white-main-color: rgba(239, 239, 239, 100%);
+    --border-white-color: rgba(234, 234, 234, 100%);
+    --chat-bc-color: rgba(248, 248, 248, 100%);
+    --chat-you-bc-color: rgba(228, 237, 253, 100%);
+    --main-grey-color: rgba(153, 153, 153, 100%);
+    --blue-main-color: rgba(51, 105, 243, 100%);
+    --red-color: rgba(255, 0, 0, 100%);
+    --black-color: rgba(30, 30, 30, 100%);
+}
+
+.main__message {
+    background-color: var(--chat-bc-color);
+    padding: 11px;
+    color: var(--black-color);
+    border-radius: 8px;
+    max-width: 402px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 20px;
+}
+
+.main__message:last-child {
+    margin-bottom: 30px;
+}
+
+.main__message--you {
+    background-color: var(--chat-you-bc-color);
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.main__date {
+    text-align: right;
+    font-size: 9px;
+    line-height: 9px;
+    color: var(--main-grey-color)
+}
+
+.main__date--you {
+    color: var(--blue-main-color);
+}
+
+
+.invalidInput {
+    border-bottom: 1px solid var(--red-color) !important;
+}
+
+.dnone {
+    display: none;
+}
+
+.dblock {
+    display: block;
+}

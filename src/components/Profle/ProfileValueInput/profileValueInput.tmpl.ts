@@ -3,7 +3,8 @@ import css from './ProfileValueInput.module.scss';
 export const tmpl = `
     <div class="${css.containerProfileValue}">
         <label class="${css.titleProfile}">{{title}}</label>
-        <input class="${css.inputChangeProfile}" type="{{typeInput}}" id="{{keyInput}}" name="{{keyInput}}" placeholder="{{value}}" />
+        {{{input}}}
+        <span id="error_{{keyInput}}" class="${css.error} dnone">{{errorMessage}}</span>
     </div> 
-    {{{Line}}}
+    {{{line}}}
 `;

@@ -15,21 +15,21 @@
 
 
         .codeError {
-            font-family: Inter;
+            font-family: Inter, sans-serif;
             font-size: 40px;
             font-weight: 500;
             line-height: 40px;
-            letter-spacing: 0em;
+            letter-spacing: 0;
             text-align: center;
             color: var(--black-color);
         }
     
         .titleError {
-            font-family: Inter;
+            font-family: Inter, sans-serif;
             font-size: 20px;
             font-weight: 500;
             line-height: 20px;
-            letter-spacing: 0em;
+            letter-spacing: 0;
             text-align: center;
             color: var(--black-color);
             margin-top: 20px;

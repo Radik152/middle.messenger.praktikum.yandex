@@ -1,10 +1,16 @@
-import Handlebars from "handlebars";
-import { tmpl } from "./line.tmpl";
+import Block from '../../utils/Block';
+import { tmpl } from './line.tmpl';
 
 interface IProps {
     className?: string;
 }
 
-export const Line = (props: IProps) => {
-    return Handlebars.compile(tmpl)(props);
-};
+export class Line extends Block {
+    constructor(props: IProps) {
+        super('div', props);
+    }
+
+    render() {
+        return this.compile(tmpl, this.props);
+    }
+}

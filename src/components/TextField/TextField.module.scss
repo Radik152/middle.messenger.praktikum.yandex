@@ -1,0 +1,13 @@
+.textField {
+  width: calc(100% - 100px);
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: var(--bc-white-main-color);
+  border: none;
+  border-radius: 20px;
+  min-height: 32px;
+}
+
+.textField:focus {
+  outline: none;
+}
