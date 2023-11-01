@@ -4,10 +4,11 @@ import { Block } from '../../utils/Block';
 import { tmpl } from './errorPage.tmpl';
 
 import css from './ErrorPage.module.scss';
+import { Routes } from '../../utils/routes/routes';
 
 export class ErrorPage extends Block {
     init() {
-        this.children.linkBack = new Link({ titleLink: 'Назад к чатам', to: '/chats', className: css.linkDecoration });
+        this.children.linkBack = new Link({ titleLink: 'Назад к чатам', to: Routes.Main, className: css.linkDecoration });
     }
 
     render() {

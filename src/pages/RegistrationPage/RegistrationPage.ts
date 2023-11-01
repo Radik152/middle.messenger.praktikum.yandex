@@ -12,6 +12,7 @@ import {
     validateEmail, validateLogin, validateName, validatePassword, validatePhone, validateRepeatPassword,
 } from '../../utils/validations/validation';
 import AuthController from '../../utils/controllers/AuthController';
+import { Routes } from '../../utils/routes/routes';
 
 interface RegistrationFormType {
     email: string;
@@ -61,7 +62,7 @@ export class RegistrationPage extends Block {
             errorMessage: 'Пароли не совпадают',
         });
         this.children.buttonAuth = new Button({ titleButton: 'Зарегистрироваться', className: css.button, events: { click: () => this.submitForm() } });
-        this.children.linkRegistration = new Link({ titleLink: 'Войти', to: '/auth' });
+        this.children.linkRegistration = new Link({ titleLink: 'Войти', to: Routes.Login });
     }
 
     render() {

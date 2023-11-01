@@ -31,8 +31,8 @@ class ProfileComponent extends Block {
         this.children.familyValue = new ProfileValueElement({ title: 'Фамилия', value: this.props.second_name });
         this.children.nameChatValue = new ProfileValueElement({ title: 'Имя в чате', value: this.props.display_name });
         this.children.phoneValue = new ProfileValueElement({ title: 'Телефон', value: this.props.phone, hideLine: true });
-        this.children.linkChangeProfile = new Link({ titleLink: 'Изменить данные', to: '/changeProfile' });
-        this.children.linkChangePassword = new Link({ titleLink: 'Изменить пароль', to: '/changePassword' });
+        this.children.linkChangeProfile = new Link({ titleLink: 'Изменить данные', to: Routes.ProfileEdit });
+        this.children.linkChangePassword = new Link({ titleLink: 'Изменить пароль', to: Routes.ProfileChangePassword });
         this.children.linkExit = new Button({
             titleButton: 'Выйти',
             className: css.exitLink,

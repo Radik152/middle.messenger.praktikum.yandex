@@ -1,9 +1,9 @@
 
 export enum Routes {
-  Main = '/chats',
-  Register = '/registration',
-  Login = '/auth',
-  Profile = '/profile',
+  Main = '/messenger',
+  Register = '/sign-up',
+  Login = '/',
+  Profile = '/settings',
   ProfileEdit = '/changeProfile',
   ProfileChangePassword = '/changePassword',
   Error = '/error',

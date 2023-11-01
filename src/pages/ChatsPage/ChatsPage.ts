@@ -18,6 +18,7 @@ import { Button } from '../../components/Button/Button';
 import { ModalComponent } from '../../components/Modal/ModalComponent/ModalComponent';
 import { ModalInputComponent } from '../../components/Modal/ModalInputComponent/ModalInputComponent';
 import { ModalFormComponent } from '../../components/Modal/ModalFormComponent/ModalFormComponent';
+import { Routes } from '../../utils/routes/routes';
 
 let interval: NodeJS.Timeout;
 export class ChatsPageComponent extends Block {
@@ -35,7 +36,7 @@ export class ChatsPageComponent extends Block {
 
 
     init() {
-      this.children.linkProfile = new Link({ titleLink: 'Профиль >', to: '/profile', className: css.linkProfile });
+      this.children.linkProfile = new Link({ titleLink: 'Профиль >', to: Routes.Profile, className: css.linkProfile });
       this.children.line = new Line({});
       this.children.input = new SearchComponent({
         events: { keyup: (e) => this.submitSearch(e) },

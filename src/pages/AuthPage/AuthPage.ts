@@ -13,6 +13,7 @@ import { Block } from '../../utils/Block';
 import { tmpl } from './authPage.tmpl';
 
 import css from './AuthPage.module.scss';
+import { Routes } from '../../utils/routes/routes';
 
 
 interface AuthFormType {
@@ -41,7 +42,7 @@ export class AuthPage extends Block {
             titleInput: 'Пароль', keyInput: 'password', typeInput: 'password', events: { focus: () => validatePassword('password') }, errorMessage: 'Неправильный пароль',
         });
         this.children.buttonAuth = new Button({ titleButton: 'Войти', className: css.button, events: { click: () => this.submitForm() } });
-        this.children.linkRegistration = new Link({ titleLink: 'Нет аккаунта?', to: '/registration' });
+        this.children.linkRegistration = new Link({ titleLink: 'Нет аккаунта?', to: Routes.Register });
     }
 
     render() {
