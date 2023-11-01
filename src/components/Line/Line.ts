@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import { Block } from '../../utils/Block';
 import { tmpl } from './line.tmpl';
 
 interface IProps {
@@ -7,7 +7,7 @@ interface IProps {
 
 export class Line extends Block {
     constructor(props: IProps) {
-        super('div', props);
+        super(props);
     }
 
     render() {

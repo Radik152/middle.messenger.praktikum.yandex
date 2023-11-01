@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  border-radius: 12px;
+  padding: 20px 30px 30px;
+
+  .formTitle {
+    font-size: 20px;
+    line-height: 20px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .formError {
+    color: var(--red-color);
+    font-size: 14px;
+  }
+}

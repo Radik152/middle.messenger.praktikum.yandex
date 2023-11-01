@@ -8,6 +8,9 @@
     --blue-main-color: rgba(51, 105, 243, 100%);
     --red-color: rgba(255, 0, 0, 100%);
     --black-color: rgba(30, 30, 30, 100%);
+    --modal-bc: hsla(0deg, 0%, 0%, 16%);
+    --on-surface: hsl(0deg 0% 0% / 16%);
+    --box-shadow: 0 0 6px rgb(0 0 0 / 14%);
 }
 
 .main__message {
@@ -46,4 +49,12 @@
 
 .invalidInput {
     border-bottom: 1px solid var(--red-color) !important;
+}
+
+.dnone {
+    display: none;
+}
+
+.dblock {
+    display: block;
 }
