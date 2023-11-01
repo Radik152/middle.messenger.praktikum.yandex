@@ -37,9 +37,12 @@ export class AuthController {
     }
 
     public async fetchUser(): Promise<void> {
-        const user = await this.api.read();
-
-        store.set('user', user);
+        try {
+            const user = await this.api.read();
+            store.set('user', user);
+        } catch (e: unknown) {
+            throw new Error(e as string);
+        }
     }
 
     public async logout(): Promise<void> {
