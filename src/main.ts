@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-named-as-default
+import AuthController from './utils/controllers/AuthController';
 import { AuthPage } from './pages/AuthPage/AuthPage';
 import { ChangePasswordPage } from './pages/ChangePasswordPage/ChangePasswordPage';
 import { ChangeProfilePage } from './pages/ChangeProfilePage/ChangeProfilePage';
@@ -5,49 +7,44 @@ import { ChatsPage } from './pages/ChatsPage/ChatsPage';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { ProfilePage } from './pages/ProfilePage/ProfilePage';
 import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
-import { chats } from './utils/data/chats';
+import { router } from './utils/routes/Router';
 
-const getPage = () => {
-    switch (window.location.pathname) {
-        case '/auth': {
-            return new AuthPage();
-        }
-        case '/registration': {
-            return new RegistrationPage();
-        }
-        case '/changeProfile': {
-            return new ChangeProfilePage();
-        }
-        case '/changePassword': {
-            return new ChangePasswordPage();
-        }
-        case '/profile': {
-            return new ProfilePage();
-        }
-        case '/chats': {
-            return new ChatsPage();
-        }
-        case '/500': {
-            return new ErrorPage({ codeError: 500, titleError: 'Мы уже фиксим' });
-        }
-        default: {
-            const pathname = window.location.pathname.slice(1);
-            const activeChat = chats.find((person) => person?.id === pathname);
-            if (activeChat) {
-                return new ChatsPage();
-            }
+import { Routes } from './utils/routes/routes';
 
-            return new ErrorPage({ codeError: 404, titleError: 'Не туда попали' });
-        }
-    }
-};
-
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
     const root = document.getElementById('app');
-
     if (root) {
-        const component = getPage();
-        root.append(component.element!);
-        component.dispatchComponentDidMount();
+        let isProtectedRoute = true;
+
+        router
+        .use(Routes.Main, ChatsPage)
+        .use(Routes.Login, AuthPage)
+        .use(Routes.Register, RegistrationPage)
+        .use(Routes.Error, ErrorPage)
+        .use(Routes.ProfileChangePassword, ChangePasswordPage)
+        .use(Routes.Profile, ProfilePage)
+        .use(Routes.ProfileEdit, ChangeProfilePage);
+
+        switch (window.location.pathname) {
+            case Routes.Login:
+            case Routes.Register:
+                isProtectedRoute = false;
+                break;
+            default:
+                break;
+        }
+
+        try {
+            await AuthController.fetchUser();
+            router.start();
+            if (!isProtectedRoute) {
+                router.go(Routes.Profile);
+            }
+        } catch (e: unknown) {
+            router.start();
+            if (isProtectedRoute) {
+                router.go(Routes.Login);
+            }
+        }
     }
 });

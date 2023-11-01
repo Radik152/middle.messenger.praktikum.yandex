@@ -1,0 +1,45 @@
+.modal__portal {
+  overflow-y: hidden;
+}
+
+.modal__container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--modal-bc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+
+  // Должен перекрывать все на странице.
+  z-index: 100;
+}
+
+.modal {
+  background-color: var(--bc-white-main-color);
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgb(0 0 0 / 14%);
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: var(--black-color);
+  margin-left: auto;
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: transparent;
+  color: var(--blue-main-color);
+}
+
+.modal__cancel-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}

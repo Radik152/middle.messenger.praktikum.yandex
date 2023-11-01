@@ -1,9 +1,9 @@
 import { tmpl } from './button.tmpl';
-import Block from '../../utils/Block';
+import { Block } from '../../utils/Block';
 
 interface IProps {
     titleButton: string;
-    className: string;
+    className?: string;
     events?: {
         click: () => void;
     };
@@ -11,12 +11,7 @@ interface IProps {
 
 export class Button extends Block {
     constructor(props: IProps) {
-        super('button', props);
-    }
-
-    init() {
-        this.element!.className = `${this.props.className}`;
-        // (this.element! as HTMLButtonElement).type = 'submit';
+        super(props);
     }
 
     render() {

@@ -1,0 +1,14 @@
+.searchChat {
+  border: none;
+  border-radius: 5px;
+  background: var(--bc-white-main-color);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 56px;
+  width: calc(100% - 20px);
+  height: 32px;
+}
+
+.searchChat:focus {
+  outline: none; 
+}

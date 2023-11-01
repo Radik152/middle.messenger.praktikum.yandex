@@ -19,5 +19,6 @@ module.exports = {
         indent: 'off',
         '@typescript-eslint/indent': 'off',
         'linebreak-style': 'off',
+        '@typescript-eslint/no-useless-constructor': 'off',
     },
 };

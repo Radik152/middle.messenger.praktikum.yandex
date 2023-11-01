@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-console */
 import { tmpl } from './registrationPage.tmpl';
 import { Title } from '../../components/Title/Title';
@@ -6,10 +7,11 @@ import { Button } from '../../components/Button/Button';
 
 import css from './RegistrationPage.module.scss';
 import { Link } from '../../components/Link/Link';
-import Block from '../../utils/Block';
+import { Block } from '../../utils/Block';
 import {
     validateEmail, validateLogin, validateName, validatePassword, validatePhone, validateRepeatPassword,
 } from '../../utils/validations/validation';
+import AuthController from '../../utils/controllers/AuthController';
 
 interface RegistrationFormType {
     email: string;
@@ -23,7 +25,7 @@ interface RegistrationFormType {
 
 export class RegistrationPage extends Block {
     constructor() {
-        super('div', {});
+        super({});
     }
 
     init() {
@@ -66,7 +68,7 @@ export class RegistrationPage extends Block {
         return this.compile(tmpl, this.props);
     }
 
-    submitForm() {
+    async submitForm() {
         if (
             validateEmail() && validateLogin() && validateName('first_name') && validateName('second_name')
             && validatePhone() && validatePassword('password') && validatePassword('password_repeat')) {
@@ -89,6 +91,14 @@ export class RegistrationPage extends Block {
                     password_repeat: passwordRepeat.value,
                 };
                 console.log(data);
+                try {
+                    await AuthController.register(data);
+                } catch (event: unknown) {
+                    console.log(event);
+                    // if (event instanceof CustomError) {
+                    //     form.props.error = event.reason;
+                    // }
+                }
         } else {
             console.log('noValidation');
         }

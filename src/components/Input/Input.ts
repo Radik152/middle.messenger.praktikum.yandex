@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import { Block } from '../../utils/Block';
 
 import { tmpl } from './input.tmpl';
 
@@ -16,15 +16,7 @@ interface IProps {
 
 export class Input extends Block {
   constructor(props: IProps) {
-    super('input', props);
-  }
-
-  init() {
-    this.element!.className = this.props.className;
-    (this.element! as HTMLInputElement).name = this.props.name;
-    (this.element! as HTMLInputElement).id = this.props.name;
-    (this.element! as HTMLInputElement).type = this.props.type;
-    (this.element! as HTMLInputElement).placeholder = this.props.placeholder ? this.props.placeholder : '';
+    super(props);
   }
 
   render() {

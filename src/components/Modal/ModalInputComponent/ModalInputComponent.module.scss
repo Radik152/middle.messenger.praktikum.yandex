@@ -1,0 +1,38 @@
+.inputContainer {
+  font-size: 13px;
+  line-height: 13px;
+  font-family: Inter, sans-serif;
+  padding: 7px 0;
+  border: none;
+  width: 100%;
+  border-bottom: var(--blue-main-color) solid 1px;
+  background-color: transparent;
+  position: relative;
+
+  .inputLabel {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    right: 15px;
+    top: -5px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: .3s;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--main-grey-color);
+  }
+  
+  input {
+    background-color: transparent;
+    border: none;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}

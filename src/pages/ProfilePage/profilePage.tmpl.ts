@@ -3,12 +3,14 @@ import css from './ProfilePage.module.scss';
 export const tmpl = `
     <div class="${css.containerProfile}">
         <div class="${css.back}">
-            <div class="${css.backIcon}"></div>
+            {{{backLink}}}
         </div>
         <div class="${css.profile}">
             <div class="${css.windowProfile}">
-                {{{avatar}}}
-                {{{titleName}}}
+                <div class="${css.imgContainer}">
+                    {{{avatar}}}
+                </div>
+                {{display_name}}
                 <div class="${css.valueBlock}">
                     {{{emailValue}}}
                     {{{loginValue}}}

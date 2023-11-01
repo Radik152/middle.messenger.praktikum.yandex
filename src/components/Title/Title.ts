@@ -1,7 +1,5 @@
 import { tmpl } from './Title.tmpl';
-import Block from '../../utils/Block';
-
-import css from './Title.module.scss';
+import { Block } from '../../utils/Block';
 
 interface IProps {
     title: string;
@@ -10,11 +8,7 @@ interface IProps {
 
 export class Title extends Block {
     constructor(props: IProps) {
-        super('h1', props);
-    }
-
-    init() {
-        this.element!.className = `${css.title} ${this.props.className}`;
+        super(props);
     }
 
     render() {
