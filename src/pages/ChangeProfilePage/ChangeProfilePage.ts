@@ -42,7 +42,7 @@ export class ChangeProfilePageComponent extends Block {
                                   avatar: this.props.avatar ? `${BASE_IMAGE_URL}${this.props.avatar}` : null,
                               });
                           } catch (e: unknown) {
-                              throw new Error(e as string);
+                            console.error(e);
                           }
                       }
                   });
@@ -125,7 +125,7 @@ export class ChangeProfilePageComponent extends Block {
       try {
         await UserController.update(data);
       } catch (event: unknown) {
-          throw new Error(event as string);
+        console.error(event);
       }
     }
 }
