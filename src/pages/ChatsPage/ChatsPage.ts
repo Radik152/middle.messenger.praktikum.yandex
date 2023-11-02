@@ -104,7 +104,7 @@ export class ChatsPageComponent extends Block {
                       await ChatsController.create(values.title);
                       this.children.Modal.closeModal();
                   } catch (event: unknown) {
-                      throw new Error(event as string);
+                    console.error(event);
                   }
               }
           }

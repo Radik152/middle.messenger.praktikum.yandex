@@ -13,6 +13,8 @@ interface IProps {
 
 export class MessagesContainerComponent extends Block<IProps> {
     render() {
+      console.log(this.props.messages);
+
       return this.compile(tmpl, this.props);
     }
 }

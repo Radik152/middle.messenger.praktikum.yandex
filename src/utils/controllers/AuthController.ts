@@ -20,7 +20,7 @@ export class AuthController {
 
             router.go(Routes.Main);
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -32,7 +32,7 @@ export class AuthController {
 
             router.go(Routes.Main);
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -41,7 +41,7 @@ export class AuthController {
             const user = await this.api.read();
             store.set('user', user);
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -51,7 +51,7 @@ export class AuthController {
 
             router.go(Routes.Login);
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 }

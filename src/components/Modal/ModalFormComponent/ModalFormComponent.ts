@@ -7,7 +7,7 @@ import { tmpl } from './modalFormComponent.tmpl';
 
 interface IProps {
     button: Button;
-    link?: typeof Link;
+    link?: Link;
     events?: Record<string, (args: any) => void>;
     inputs?: ModalInputComponent[];
     classNames?: string;

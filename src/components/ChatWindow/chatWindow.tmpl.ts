@@ -50,7 +50,6 @@ export const tmpl = `
         </div>
         <div class="${css.chatMain}">
           {{{messagesContainer}}}
-
         </div>
         <div>
           {{{line_2}}}

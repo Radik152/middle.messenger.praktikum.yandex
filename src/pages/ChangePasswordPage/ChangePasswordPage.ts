@@ -81,7 +81,7 @@ export class ChangePasswordPageComponent extends Block {
             try {
                 await UserController.updatePassword(data);
             } catch (event: unknown) {
-                throw new Error(event as string);
+                console.error(event);
             }
         } else {
             console.log('noValidation');
