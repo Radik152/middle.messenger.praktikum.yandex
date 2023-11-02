@@ -187,152 +187,152 @@ export class ChatWindowComponent extends Block {
     return false;
 }
 
-  render() {
-    const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
+    render() {
+        const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
 
-    if (activeChat != null) {
-      this.children.avatar = new AvatarComponent({
-          id: 'chatAvatar',
-          isActive: true,
-          inputContainerClasses: 'header__image',
-          events: {
-              click: async () => {
-                  const inputComponent = document.getElementById('chatAvatar') as HTMLInputElement;
-                  inputComponent?.click();
-                  inputComponent?.addEventListener('change', async () => {
-                      const files = inputComponent?.files;
-                      if (files != null) {
-                          try {
-                              const newAvatar = await ChatsController.updateAvatar(files[0], activeChat.id);
-                              const avatar = this.children.avatar as Block;
+        if (activeChat != null) {
+            this.children.avatar = new AvatarComponent({
+                id: 'chatAvatar',
+                isActive: true,
+                inputContainerClasses: 'header__image',
+                events: {
+                    click: async () => {
+                        const inputComponent = document.getElementById('chatAvatar') as HTMLInputElement;
+                        inputComponent?.click();
+                        inputComponent?.addEventListener('change', async () => {
+                            const files = inputComponent?.files;
+                            if (files != null) {
+                                try {
+                                    const newAvatar = await ChatsController.updateAvatar(files[0], activeChat.id);
+                                    const avatar = this.children.avatar as Block;
 
-                              avatar.setProps({
-                                  ...avatar.props,
-                                  avatar: newAvatar ? `${BASE_IMAGE_URL}${newAvatar}` : null,
-                              });
-                          } catch (e: unknown) {
-                              throw new Error(e as string);
-                          }
-                      }
-                  });
-              },
-          },
-          avatar: activeChat.avatar != null ? `${BASE_IMAGE_URL}${activeChat.avatar}` : null,
-      });
-  }
+                                    avatar.setProps({
+                                        ...avatar.props,
+                                        avatar: newAvatar ? `${BASE_IMAGE_URL}${newAvatar}` : null,
+                                    });
+                                } catch (e: unknown) {
+                                    console.error(e);
+                                }
+                            }
+                        });
+                    },
+                },
+                avatar: activeChat.avatar != null ? `${BASE_IMAGE_URL}${activeChat.avatar}` : null,
+            });
+        }
 
-    return this.compile(tmpl, { ...this.props, activeChat });
-  }
+        return this.compile(tmpl, { ...this.props, activeChat });
+    }
 
-  validationMessages() {
-    const input = document.getElementById('message') as HTMLInputElement;
+    validationMessages() {
+        const input = document.getElementById('message') as HTMLInputElement;
 
-    return notEmptyValidator(input.value);
-  }
+        return notEmptyValidator(input.value);
+    }
 
-  private async onChatDeleteModalSubmit(e: Event): Promise<void> {
-    e.preventDefault();
-    if (e.target != null && e.target instanceof HTMLFormElement) {
-        if (
-            this.children.ChatDeleteModal instanceof ModalComponent
-            && this.children.ChatDeleteModal.children.form instanceof ModalFormComponent
-        ) {
-            const { form } = this.children.ChatDeleteModal.children;
+    private async onChatDeleteModalSubmit(e: Event): Promise<void> {
+        e.preventDefault();
+        if (e.target != null && e.target instanceof HTMLFormElement) {
+            if (
+                this.children.ChatDeleteModal instanceof ModalComponent
+                && this.children.ChatDeleteModal.children.form instanceof ModalFormComponent
+            ) {
+                const { form } = this.children.ChatDeleteModal.children;
 
-            form.validateInputs();
+                form.validateInputs();
 
-            if (form.isFormValid()) {
-                try {
-                    const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
-                    if (activeChat != null) {
-                        await ChatsController.delete(activeChat.id);
-                        this.children.ChatDeleteModal.closeModal();
-                        router.go(Routes.Main);
+                if (form.isFormValid()) {
+                    try {
+                        const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
+                        if (activeChat != null) {
+                            await ChatsController.delete(activeChat.id);
+                            this.children.ChatDeleteModal.closeModal();
+                            router.go(Routes.Main);
+                        }
+                    } catch (event: unknown) {
+                        console.error(event);
                     }
-                } catch (event: unknown) {
-                  throw new Error(event as string);
                 }
             }
         }
     }
-  }
 
-  private async onAddPersonModalSubmit(e: Event): Promise<void> {
-      e.preventDefault();
-      if (e.target != null && e.target instanceof HTMLFormElement) {
-          if (
-              this.children.AddPersonModal instanceof ModalComponent
-              && this.children.AddPersonModal.children.form instanceof ModalFormComponent
-          ) {
-              const { form } = this.children.AddPersonModal.children;
+    private async onAddPersonModalSubmit(e: Event): Promise<void> {
+        e.preventDefault();
+        if (e.target != null && e.target instanceof HTMLFormElement) {
+            if (
+                this.children.AddPersonModal instanceof ModalComponent
+                && this.children.AddPersonModal.children.form instanceof ModalFormComponent
+            ) {
+                const { form } = this.children.AddPersonModal.children;
 
-              const search = form.getValues<{ login: string }>();
+                const search = form.getValues<{ login: string }>();
 
-              try {
-                  const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
+                try {
+                    const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
 
-                  if (search != null && activeChat != null) {
-                      const users = await UserController.searchUser(search);
-                      if (users != null && users.length === 1) {
-                          await ChatsController.addUserToChat(activeChat.id, users[0].id);
-                          this.children.AddPersonModal.closeModal();
-                      } else {
-                          form.props.error = 'Пользователь не найден';
-                      }
-                  }
-              } catch (event: unknown) {
-                throw new Error(event as string);
-              }
-          }
-      }
-  }
-
-  private async onDeletePersonModalSubmit(e: Event): Promise<void> {
-      e.preventDefault();
-      if (e.target != null && e.target instanceof HTMLFormElement) {
-          if (
-              this.children.DeletePersonModal instanceof ModalComponent
-              && this.children.DeletePersonModal.children.form instanceof ModalFormComponent
-          ) {
-              const { form } = this.children.DeletePersonModal.children;
-
-              const search = form.getValues<{ login: string }>();
-
-              try {
-                  const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
-
-                  if (search != null && activeChat != null) {
-                      const users = await UserController.searchUser(search);
-                      if (users != null && users.length === 1) {
-                          await ChatsController.deleteUserToChat(activeChat.id, users[0].id);
-                          this.children.DeletePersonModal.closeModal();
-                      } else {
-                          form.props.error = 'Пользователь не найден';
-                      }
-                  }
-              } catch (event: unknown) {
-                  throw new Error(event as string);
-              }
-          }
-      }
-  }
-
-  private onMessageSubmit(e: Event): void {
-    e.preventDefault();
-    if (e.target != null && e.target instanceof HTMLFormElement) {
-        if (this.children.form instanceof ModalFormComponent) {
-            const { form } = this.children;
-
-            form.validateInputs();
-            const values = form.getValues<{ message: string }>();
-
-            if (form.isFormValid() && values != null && values.message.trim().length > 0) {
-                MessagesController.sendMessage(this.props.selectedChat, values.message);
-                form.clearForm();
+                    if (search != null && activeChat != null) {
+                        const users = await UserController.searchUser(search);
+                        if (users != null && users.length === 1) {
+                            await ChatsController.addUserToChat(activeChat.id, users[0].id);
+                            this.children.AddPersonModal.closeModal();
+                        } else {
+                            form.props.error = 'Пользователь не найден';
+                        }
+                    }
+                } catch (event: unknown) {
+                    console.error(event);
+                }
             }
         }
     }
-}
+
+    private async onDeletePersonModalSubmit(e: Event): Promise<void> {
+        e.preventDefault();
+        if (e.target != null && e.target instanceof HTMLFormElement) {
+            if (
+                this.children.DeletePersonModal instanceof ModalComponent
+                && this.children.DeletePersonModal.children.form instanceof ModalFormComponent
+            ) {
+                const { form } = this.children.DeletePersonModal.children;
+
+                const search = form.getValues<{ login: string }>();
+
+                try {
+                    const activeChat = (this.props.chats as Chat[]).find((chat) => chat.id === this.props.selectedChat);
+
+                    if (search != null && activeChat != null) {
+                        const users = await UserController.searchUser(search);
+                        if (users != null && users.length === 1) {
+                            await ChatsController.deleteUserToChat(activeChat.id, users[0].id);
+                            this.children.DeletePersonModal.closeModal();
+                        } else {
+                            form.props.error = 'Пользователь не найден';
+                        }
+                    }
+                } catch (event: unknown) {
+                    console.error(event);
+                }
+            }
+        }
+    }
+
+    private onMessageSubmit(e: Event): void {
+        e.preventDefault();
+        if (e.target != null && e.target instanceof HTMLFormElement) {
+            if (this.children.form instanceof ModalFormComponent) {
+                const { form } = this.children;
+
+                form.validateInputs();
+                const values = form.getValues<{ message: string }>();
+
+                if (form.isFormValid() && values != null && values.message.trim().length > 0) {
+                    MessagesController.sendMessage(this.props.selectedChat, values.message);
+                    form.clearForm();
+                }
+            }
+        }
+    }
 }
 
 

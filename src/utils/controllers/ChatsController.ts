@@ -19,7 +19,7 @@ class ChatsController {
 
             this.fetchChats();
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -56,7 +56,7 @@ class ChatsController {
 
             return chat.avatar;
         } catch (e: unknown) {
-          throw new Error(e as string);
+            console.error(e);
         }
 
         return null;

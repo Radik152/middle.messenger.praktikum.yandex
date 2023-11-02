@@ -20,7 +20,7 @@ export class UserController {
 
             router.go(Routes.Profile);
         } catch (e: unknown) {
-            throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -30,7 +30,7 @@ export class UserController {
 
             router.go(Routes.Profile);
         } catch (e: unknown) {
-          throw new Error(e as string);
+            console.error(e);
         }
     }
 
@@ -40,7 +40,7 @@ export class UserController {
 
             return users;
         } catch (e: unknown) {
-          throw new Error(e as string);
+            console.error(e);
         }
 
         return null;
@@ -52,7 +52,7 @@ export class UserController {
 
             store.set('user', user);
         } catch (e: unknown) {
-          throw new Error(e as string);
+            console.error(e);
         }
     }
 }

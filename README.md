@@ -12,10 +12,10 @@ https://musical-gumdrop-b00e84.netlify.app/auth
 4. preview - предпросмотр сборки
 
 ## Роутинг на сайте
-'/auth': Вход
-'/registration': Регистрация
-'/chats': Окно чатов
-'/profile': Окно профиля
+'/': Вход
+'/sign-up': Регистрация
+'/messenger': Окно чатов
+'/settings': Окно профиля
 '/changeProfile': Окно изменения профиля
 '/changePassword': Окно изменения пароля
 
