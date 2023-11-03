@@ -1,7 +1,7 @@
 import { tmpl } from './profileValueInput.tmpl';
 
 import { Line } from '../../Line/Line';
-import Block from '../../../utils/Block';
+import { Block } from '../../../utils/Block';
 
 import css from './ProfileValueInput.module.scss';
 import { Input } from '../../Input/Input';
@@ -20,7 +20,7 @@ interface IProps {
 
 export class ProfileValueInput extends Block {
   constructor(props: IProps) {
-      super('div', props);
+      super(props);
   }
 
   init() {

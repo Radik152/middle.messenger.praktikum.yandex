@@ -1,8 +1,8 @@
 ## Сайт на netlify
-https://musical-gumdrop-b00e84.netlify.app/chats
+https://musical-gumdrop-b00e84.netlify.app/auth
 
-## Версия 2
-Добавлены линтеры, реализован компонентный подход, сверстана страница чатов
+## Версия 3
+Добавлены api, router, ws
 
 ## Команды для консоли
 
@@ -12,12 +12,21 @@ https://musical-gumdrop-b00e84.netlify.app/chats
 4. preview - предпросмотр сборки
 
 ## Роутинг на сайте
-'/auth': Вход
-'/registration': Регистрация
-'/chats': Окно чатов
-'/profile': Окно профиля
+'/': Вход
+'/sign-up': Регистрация
+'/messenger': Окно чатов
+'/settings': Окно профиля
 '/changeProfile': Окно изменения профиля
 '/changePassword': Окно изменения пароля
-'/500': Ошибка 500
 
-Для ошибки 400 можно перейте по несуществующему адресу, пододйдет "/"
+## Пользователи
+
+# Пользователь 1
+login: Radik1552
+password: Radik1552
+
+# Пользователь 2
+login: Elena152
+password: Elena152
+
+Для ошибки можно перейте по несуществующему адресу, подойдет "/"

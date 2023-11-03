@@ -6,6 +6,7 @@ export const tmpl = `
             <div class="${css.chatsListHeader}">
                 {{{linkProfile}}}
                 {{{input}}}
+                {{{addChatButton}}}
             </div>
             {{{line}}}
             {{{chats}}}
@@ -13,6 +14,3 @@ export const tmpl = `
         {{{chat}}}
     </div>
 `;
-
-
-// <input class="${css.searchChat}" type="text"  id="message" name="message " placeholder="Поиск" />

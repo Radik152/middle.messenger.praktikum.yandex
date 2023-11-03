@@ -1,7 +1,5 @@
 import { tmpl } from './link.tmpl';
-import Block from '../../utils/Block';
-
-import css from './Link.module.scss';
+import { Block } from '../../utils/Block';
 
 interface IProps {
     to: string;
@@ -11,12 +9,7 @@ interface IProps {
 
 export class Link extends Block {
     constructor(props: IProps) {
-        super('a', props);
-    }
-
-    init() {
-        (this.element! as HTMLAnchorElement).href = this.props.to;
-        this.element!.className = `${css.link} ${this.props.className}`;
+        super(props);
     }
 
     render() {

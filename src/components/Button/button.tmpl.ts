@@ -1,4 +1,4 @@
 
 export const tmpl = `
-    {{titleButton}}
+    <button class="{{className}}">{{titleButton}}</button>
 `;

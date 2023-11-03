@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "eslintIgnore": ["dist/*"],
+  "eslintIgnore": [
+    "dist/*"
+  ],
   "scripts": {
     "start": "tsc && vite build && node index.js",
     "dev": "vite",
@@ -11,6 +13,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.50.0",

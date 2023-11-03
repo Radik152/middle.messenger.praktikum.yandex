@@ -3,11 +3,13 @@ import css from './ChangePasswordPage.module.scss';
 export const tmpl = `
     <div class="${css.containerProfile}">
         <div class="${css.back}">
-            <div class="${css.backIcon}"></div>
+            {{{backLink}}}
         </div>
         <div class="${css.profile}">
             <form id="changePasswordForm" class="${css.windowProfile}" onsubmit="return false">
-                {{{avatar}}}
+                <div class="${css.imgContainer}">
+                    {{{avatar}}}
+                </div>
                 {{{titleName}}}
                 <div class="${css.valueBlock}">
                     {{{oldPasswordValue}}}

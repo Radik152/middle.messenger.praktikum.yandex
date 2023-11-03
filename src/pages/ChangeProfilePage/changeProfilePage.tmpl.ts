@@ -3,12 +3,14 @@ import css from './ChangeProfilePage.module.scss';
 export const tmpl = `
     <div class="${css.containerProfile}">
         <div class="${css.back}">
-            <div class="${css.backIcon}"></div>
+            {{{backLink}}}
         </div>
         <div class="${css.profile}">
             <form id="changeProfileForm" class="${css.windowProfile}" onsubmit="return false">
-                {{{changeProfileInput}}}
-                {{{titleName}}}
+                <div class="${css.imgContainer}">
+                    {{{changeProfileInput}}}
+                </div>
+                {{{display_name}}}
                 <div class="${css.valueBlock}">
                     {{{emailValue}}}
                     {{{loginValue}}}

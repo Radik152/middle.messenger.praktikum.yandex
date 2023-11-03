@@ -3,7 +3,7 @@ import { Line } from '../../Line/Line';
 import { tmpl } from './profileValueElement.tmpl';
 
 import css from './ProfileValueElement.module.scss';
-import Block from '../../../utils/Block';
+import { Block } from '../../../utils/Block';
 
 interface IProps {
     title: string;
@@ -13,7 +13,7 @@ interface IProps {
 
 export class ProfileValueElement extends Block {
     constructor(props: IProps) {
-        super('div', props);
+        super(props);
     }
 
     init() {
