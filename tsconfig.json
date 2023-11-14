@@ -23,7 +23,7 @@
     "src", 
     "index.js",
     "./vite.config.js",
-    "mochaSetup.js",
+    "mochaSetup.js"
   ],
   "exclude": [
     "node_modules",
