@@ -16,6 +16,10 @@
     "test": "mocha",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "./src/**/*.ts": "npm run lint",
+    "./src/**/*.scss": "npm run stylelint"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.10",
     "@types/mocha": "^10.0.4",
