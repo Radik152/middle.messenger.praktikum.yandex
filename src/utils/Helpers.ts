@@ -1,4 +1,5 @@
-import { DATE_OPTIONS } from './Contants';
+/* eslint-disable import/extensions */
+import { DATE_OPTIONS } from './Contants.ts';
 
 export type PlainObject<T = unknown> = {
     [k in string]: T;

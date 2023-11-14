@@ -1,5 +1,6 @@
-import { ApiMethods, Config } from '../../types/api';
-import { queryString } from '../Helpers';
+/* eslint-disable import/extensions */
+import { ApiMethods, Config } from '../../types/api.ts';
+import { queryString } from '../Helpers.ts';
 
 
 type HTTPMethod = <R = unknown>(url: string, options?: Config) => Promise<R>;

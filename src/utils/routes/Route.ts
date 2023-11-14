@@ -1,4 +1,5 @@
-import { Block } from '../Block';
+/* eslint-disable import/extensions */
+import { Block } from '../Block.ts';
 
 
 function isEqual(lhs: string, rhs: string): boolean {

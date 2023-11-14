@@ -1,15 +1,24 @@
-import { Block } from '../Block';
-import { Route } from './Route';
-import { Routes } from './routes';
+/* eslint-disable import/extensions */
+/* eslint-disable no-constructor-return */
+/* eslint-disable no-underscore-dangle */
+import { Block } from '../Block.ts';
+import { Route } from './Route.ts';
+import { Routes } from './routes.ts';
 
 class Router {
-    private history: History;
+    // eslint-disable-next-line no-use-before-define
+    private static __instance?: Router;
 
-    private routes: Route[];
+    private history!: History;
 
-    private _currentRoute: Route | null;
+    private routes!: Route[];
+
+    private _currentRoute!: Route | null;
 
     public constructor(private readonly _rootQuery: string) {
+        if (Router.__instance) {
+            return Router.__instance;
+        }
         this.routes = [];
         this.history = window.history;
         this._currentRoute = null;
@@ -61,6 +70,13 @@ class Router {
 
     private getRoute(pathname: string) {
         return this.routes.find((route) => route.match(pathname));
+    }
+
+    public reset() {
+        delete Router.__instance;
+
+        // eslint-disable-next-line no-new
+        new Router(this._rootQuery);
     }
 }
 
