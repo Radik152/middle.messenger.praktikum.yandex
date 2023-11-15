@@ -2,7 +2,8 @@
 
 import Handlebars from "handlebars";
 import { nanoid } from "nanoid";
-import { EventBus } from "./EventBus";
+// eslint-disable-next-line import/extensions
+import { EventBus } from "./EventBus.ts";
 
 export class Block<P extends Record<string, any> = any> {
     private static EVENTS = {
