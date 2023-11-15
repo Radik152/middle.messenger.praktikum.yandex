@@ -1,10 +1,10 @@
 import { tmpl } from './profileValueInput.tmpl';
 
 import { Line } from '../../Line/Line';
+import { Input } from '../../Input/Input';
 import { Block } from '../../../utils/Block';
 
 import css from './ProfileValueInput.module.scss';
-import { Input } from '../../Input/Input';
 
 interface IProps {
   title: string;

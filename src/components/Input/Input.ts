@@ -13,7 +13,6 @@ interface IProps {
   }
 }
 
-
 export class Input extends Block {
   constructor(props: IProps) {
     super(props);

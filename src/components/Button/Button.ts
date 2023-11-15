@@ -1,5 +1,6 @@
-import { tmpl } from './button.tmpl';
-import { Block } from '../../utils/Block';
+/* eslint-disable import/extensions */
+import { tmpl } from './button.tmpl.ts';
+import { Block } from '../../utils/Block.ts';
 
 interface IProps {
     titleButton: string;
