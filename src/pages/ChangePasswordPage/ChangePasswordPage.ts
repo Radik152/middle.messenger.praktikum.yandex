@@ -22,10 +22,6 @@ interface ChangePasswordFormType {
 }
 
 export class ChangePasswordPageComponent extends Block {
-    constructor() {
-        super({});
-    }
-
     init() {
         this.children.backLink = new Link({ titleLink: '', to: Routes.Profile, className: css.backIcon });
         this.children.avatar = new AvatarComponent({
@@ -34,7 +30,7 @@ export class ChangePasswordPageComponent extends Block {
             avatar: this.props.avatar ? `${BASE_IMAGE_URL}${this.props.avatar}` : null,
             inputContainerClasses: 'profile__avatar',
         });
-        this.children.titleName = new Title({ title: 'Иван', className: css.titleName });
+        this.children.titleName = new Title({ title: this.props.display_name, className: css.titleName });
         this.children.oldPasswordValue = new ProfileValueInput({
             title: 'Старый пароль',
             value: '',
